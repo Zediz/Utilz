@@ -1,6 +1,6 @@
 <?php
 
-namespace zediz\Utilz;
+namespace Zediz\Utilz;
 
 class Utilz{
 
