@@ -1,16 +1,18 @@
 {
     "name": "zediz/utilz",
+    "description": "Utilidades que normalmente uso",
     "type": "library",
-    "description": "Utilidades que mas uso",
-    "keywords": ["relevant","tags","go","here"],
-    "homepage": "",
     "license": "MIT",
     "authors": [
         {
-            "name": "Hiram Hernandez",
-            "email": "hiram.shock@gmail.com",
-            "homepage": "",
-            "role": "Developer"
+            "name": "Zediz",
+            "email": "hiram.shock@gmail.com"
         }
-    ]
+    ],
+    "require": {},
+    "autoload": {
+    "psr-4": {
+        "Proyecto\\Math\\": "src/"
+        }
+    }
 }
