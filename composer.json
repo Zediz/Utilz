@@ -12,7 +12,8 @@
     "require": {},
     "autoload": {
     "psr-4": {
-        "Proyecto\\Math\\": "src/"
+        "Proyecto\\Math\\": "src/",
+        "Zediz\\Utilz\\": "src/"
         }
     }
 }
