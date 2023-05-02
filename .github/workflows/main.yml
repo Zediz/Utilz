@@ -37,6 +37,6 @@ jobs:
         with: 
           server: ftp://mindtech.com.mx
           username: u529436459.menu-digital.mindtech.com.mx
-          password: ${{ secrets.ftp_password }}
+          password: ${{ secrets.FTP_PASSWORD }}
     
     
