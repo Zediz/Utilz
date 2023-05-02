@@ -35,7 +35,7 @@ jobs:
       - name: Sync Files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
-          server: ftp://mindtech.com.mx
+          server: ftp.mindtech.com.mx
           username: u529436459.menu-digital.mindtech.com.mx
           password: ${{ secrets.FTP_PASSWORD }}
     
