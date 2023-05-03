@@ -15,13 +15,16 @@ jobs:
 #         run: npm ci
 #       - name: Build Dependencies
 #         run: npm run build
-      - name: Archive Production artifact
+      - name: Uploading SRC
         uses: actions/upload-artifact@main
         with:
           name: src
-          path: |
-            src
-            config
+          path: src
+      - name: Uploading Config
+        uses: actions/upload-artifact@main
+        with:
+          name: config
+          path: config
   deploy:
     name: Deploy
     needs: build
@@ -29,11 +32,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
-      - name: Download Artifact
+      - name: Download Artifact SRC
         uses: actions/download-artifact@main
         with:
           name: src
           path: testlms.lmsleads.com/public_html
+      - name: Download Artifact Config
+        uses: actions/download-artifact@main
+        with:
+          name: config
+          path: testlms.lmsleads.com/public_html/config
       - name: Sync Files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
