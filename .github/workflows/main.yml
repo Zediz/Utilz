@@ -33,7 +33,7 @@ jobs:
           name: src
           path: src
       - name: Sync Files to hosting
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with: 
           server: ftp.mindtech.com.mx
           username: u529436459.menu-digital.mindtech.com.mx
