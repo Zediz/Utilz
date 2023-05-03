@@ -16,7 +16,7 @@ jobs:
 #       - name: Build Dependencies
 #         run: npm run build
       - name: Uploading SRC
-        uses: actions/upload-artifact@main
+        uses: action
         with:
           name: src
           path: src
