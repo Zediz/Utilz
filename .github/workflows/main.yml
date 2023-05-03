@@ -22,7 +22,6 @@ jobs:
           path: |
             src
             config
-            !./config/config.php
   deploy:
     name: Deploy
     needs: build
