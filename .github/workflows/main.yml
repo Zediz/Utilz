@@ -15,7 +15,7 @@ jobs:
 #         run: npm ci
 #       - name: Build Dependencies
 #         run: npm run build
-      - name: Uploading SRC
+      - name: Archive Production artifact
         uses: actions/upload-artifact@main
         with:
           name: src
@@ -27,16 +27,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
-      - name: Download Artifact SRC
+      - name: Download Artifact
         uses: actions/download-artifact@main
         with:
           name: src
-          path: testlms.lmsleads.com/public_html
+          path: src
       - name: Sync Files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
           server: ftp.mindtech.com.mx
           username: u529436459.menu-digital.mindtech.com.mx
           password: ${{ secrets.FTP_PASSWORD }}
-    
-    
