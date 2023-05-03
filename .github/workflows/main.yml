@@ -19,7 +19,10 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: src
-          path: src
+          path: |
+            src
+            config
+            !config/config.php
   deploy:
     name: Deploy
     needs: build
@@ -31,7 +34,7 @@ jobs:
         uses: actions/download-artifact@main
         with:
           name: src
-          path: src
+          path: testlms.lmsleads.com/public_html
       - name: Sync Files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
