@@ -20,11 +20,6 @@ jobs:
         with:
           name: src
           path: src
-      - name: Uploading Config
-        uses: actions/upload-artifact@main
-        with:
-          name: config
-          path: config
   deploy:
     name: Deploy
     needs: build
@@ -37,11 +32,6 @@ jobs:
         with:
           name: src
           path: testlms.lmsleads.com/public_html
-      - name: Download Artifact Config
-        uses: actions/download-artifact@main
-        with:
-          name: config
-          path: testlms.lmsleads.com/public_html/config
       - name: Sync Files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
