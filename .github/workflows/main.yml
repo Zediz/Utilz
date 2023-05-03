@@ -31,7 +31,7 @@ jobs:
         uses: actions/download-artifact@main
         with:
           name: src
-          path: src
+          path: testlms.lmsleads.com/public_html
       - name: Sync Files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
