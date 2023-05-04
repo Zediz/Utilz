@@ -32,19 +32,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
-      - name: Display structure of downloaded files
-        run: ls -R
-        working-directory: ./web/testlms.lmsleads.com/public_html
       - name: Download LMS App
         uses: actions/download-artifact@main
         with:
           name: lmsapp
-          path: web/testlms.lmsleads.com/public_html
+          path: ./web/testlms.lmsleads.com/public_html
       - name: Download LMS API
         uses: actions/download-artifact@main
         with:
           name: api
-          path: web/testlms.lmsleads.com/public_html/api
+          path: ./web/testlms.lmsleads.com/public_html/api
       - name: Sync Files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
