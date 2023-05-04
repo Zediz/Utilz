@@ -32,9 +32,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
-        - name: Display structure of downloaded files
-          run: ls -R
-          working-directory: web/testlms.lmsleads.com/public_html
+      - name: Display structure of downloaded files
+        run: ls -R
+        working-directory: web/testlms.lmsleads.com/public_html
       - name: Download LMS App
         uses: actions/download-artifact@main
         with:
