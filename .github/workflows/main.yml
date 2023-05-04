@@ -19,8 +19,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: lmsapp
-          path: |
-            client/dist
+          path: client/dist
       - name: Archive LMS API
         uses: actions/upload-artifact@main
         with:
