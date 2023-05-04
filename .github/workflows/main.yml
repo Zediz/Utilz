@@ -15,13 +15,18 @@ jobs:
 #         run: npm ci
 #       - name: Build Dependencies
 #         run: npm run build
-      - name: Archive Production artifact
+      - name: Archive LMS Aungular App
         uses: actions/upload-artifact@main
         with:
-          name: src
+          name: lmsapp
           path: |
-            src
-            config
+            client/dist
+      - name: Archive LMS API
+        uses: actions/upload-artifact@main
+        with:
+          name: api
+          path: |
+            api
             !./config/config.php
   deploy:
     name: Deploy
@@ -30,11 +35,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@main
-      - name: Download Artifact
+      - name: Download LMS App
         uses: actions/download-artifact@main
         with:
-          name: src
-          path: testlms.lmsleads.com/public_html
+          name: lmsapp
+          path: web/testlms.lmsleads.com/public_html
+      - name: Download LMS API
+        uses: actions/download-artifact@main
+        with:
+          name: api
+          path: web/testlms.lmsleads.com/public_html/api
       - name: Sync Files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
