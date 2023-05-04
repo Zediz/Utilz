@@ -19,7 +19,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: lmsapp
-          path: client/dist/
+          path: client/dist
       - name: Archive LMS API
         uses: actions/upload-artifact@main
         with:
@@ -42,6 +42,8 @@ jobs:
         with:
           name: api
           path: ./web/testlms.lmsleads.com/public_html/api
+      - name: See Directories
+        run: ls -R
       - name: Sync Files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with: 
