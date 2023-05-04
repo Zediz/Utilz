@@ -30,23 +30,17 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@main
       - name: Download LMS App
         uses: actions/download-artifact@main
         with:
           name: lmsapp
-          path: ./root/web/testlms.lmsleads.com/public_html
+          path: ./web/testlms.lmsleads.com/public_html
       - name: Download LMS API
         uses: actions/download-artifact@main
         with:
           name: api
-          path: ./root/web/testlms.lmsleads.com/public_html/api
+          path: ./web/testlms.lmsleads.com/public_html/api
       - name: See Directories
-        run: ls -R
-      - name: Change Directory
-        run: cd root
-      - name: See Directories 2
         run: ls -R
       - name: Sync Files to hosting
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
